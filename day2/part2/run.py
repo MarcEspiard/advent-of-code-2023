@@ -23,14 +23,16 @@ for gameRow in input_list:
     for game in games:
         colors = game.split(',')
         for color in colors:
-            numCubes = int(color.replace('blue', '').replace('red', '').replace('green', ''))
             if "red" in color:
+                numCubes = int(color.replace('red', ''))
                 maxes[0] = max(maxes[0], numCubes)
                 continue
             if "green" in color:
+                numCubes = int(color.replace('green', ''))
                 maxes[1] = max(maxes[1], numCubes)
                 continue
             if "blue" in color:
+                numCubes = int(color.replace('blue', ''))
                 maxes[2] = max(maxes[2], numCubes)
                 continue
 
