@@ -65,13 +65,16 @@ for y, row in enumerate(input_list):
                 # This ensures we're not counting the same number twice
                 if len(unique_parts_pos) == 2:
                     ratio = 1
+                    part_strings = []
                     for unique_p_pos in unique_parts_pos:
                         part_string = ''
                         for pos in unique_p_pos:
                             part_string += input_list[pos[1]][pos[0]]
-                        ratio *= int(part_string)
+                        ratio = int(part_string) * ratio
+                        part_strings.append(part_string)
 
                     print('found gear at', y+1, x+1)
+                    print('part_strings', part_strings)
                     print('ratio', ratio)
                     ratios.append(ratio)
 
