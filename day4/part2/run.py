@@ -23,13 +23,11 @@ for index, row in enumerate(input_list):
 
     if found > 0:
         for y in range(found):
-            for n in range(card_map[index]):
-                cm_index = index + y + 1
-                if 0 <= cm_index < list_max:
-                    card_map[cm_index] += 1
+            cm_index = index + y + 1
+            if 0 <= cm_index < list_max:
+                card_map[cm_index] += 1 * card_map[index]
 
     cards_processed.append(card_map[index])
-
 
 print(card_map)
 print(cards_processed)
